@@ -7,6 +7,7 @@ export default {
 	component: FormControl,
 	argTypes: {
 		backgroundColor: { control: 'color' },
+		label : {control : 'text'}
 	},
 };
 
@@ -14,25 +15,35 @@ const Template = (args) => <FormControl {...args} />;
 
 export const Input = Template.bind({});
 Input.args = {
-	type: true,
-	label: 'Input Field',
+	variation: 'input',
 }
 
 export const TextArea = Template.bind({});
 TextArea.args = {
-	type: false,
-	label: 'Text Area Field',
+	variation: 'textarea',
 }
 
 export const Labeled = Template.bind({});
 Labeled.args = {
-	type: true,
+	...Input.args,
 	label: 'Labeled Input',
 }
 
-export const AsTxt = Template.bind({});
-Labeled.args = {
-	type: true,
-	asTxt: true,
+export const AssistiveText = Template.bind({});
+AssistiveText.args = {
+	...Input.args,
+	assistiveText: 'This is assistive text',
 	label: 'Assistive Text Input',
+}
+
+export const CheckBox = Template.bind({});
+CheckBox.args = {
+	variation: 'checkbox',
+	label: 'Checkbox: ',
+}
+
+export const Radio = Template.bind({});
+Radio.args = {
+	variation: 'radio',
+	label: 'Radio: ',
 }

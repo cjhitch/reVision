@@ -11,7 +11,7 @@ export const Button = ({ color, size, type, label, ...props }) => {
 	return (
 		<button
 			type="button"
-			className={['btn', `${size}`, mode, display].join(' ')}
+			className={['Button', `${size}`, mode, display].join(' ')}
 			{...props}
 		>
 			{label}
