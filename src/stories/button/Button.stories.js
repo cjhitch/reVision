@@ -5,6 +5,9 @@ import { Button } from './Button';
 export default {
 	title: 'Example/Button',
 	component: Button,
+	argTypes: {
+		backgroundColor: { control: 'color' },
+	},
 };
 
 const Template = (args) => <Button {...args} />;
@@ -29,14 +32,12 @@ Tertiary.args = {
 
 export const Outline = Template.bind({});
 Outline.args = {
-	...Primary.args,
 	type: 'outline',
 	label: 'Outline Button'
 };
 
 export const Shadow = Template.bind({});
 Shadow.args = {
-	...Primary.args,
 	type: 'shadow',
 	label: 'Shadow Button'
 };
